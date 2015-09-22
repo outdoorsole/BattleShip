@@ -1,10 +1,25 @@
+
 var startGame = function(){
   return false;
 };
 
-var Ships = function(){
-  return false;
-};
+function Ship(shipName, shipSize){
+  this.shipName = shipName || "";
+  this.shipSize = shipSize || 0;
+  // return false;
+}
+
+function Submarine(shipName, shipSize, shipType) {
+  this.base = Ship;
+  this.base(shipName,shipSize);
+  this.shipType = "Submarine";
+}
+
+Submarine.prototype = new Ship();
+
+var smallSub = new Submarine("Submarine", 3);
+
+
 
 var Players = function(){
   return false;
