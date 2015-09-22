@@ -1,0 +1,10 @@
+[class*=col-]{
+	padding-top: 5px;
+	background-color: #eee;
+	border: 1px solid #ddd;
+	height: 100px;
+}
+
+#gameboard{
+	margin: 50px;
+}
