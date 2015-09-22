@@ -24,6 +24,13 @@ var Scoreboard = function(){
 };
 
 
+var shipSink = function(){
+  return false;
+}
+
+var shipHits = function(){
+  return false;
+}
 
 
 var buildGameBoard = function(boardSize) {
