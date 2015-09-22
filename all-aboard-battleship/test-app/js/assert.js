@@ -14,7 +14,6 @@ function assert(outcome,description){
 		//$("#output").append("Fail: " + description);
 	}
 
-	//test outcome
 
 
 	//build <li>
