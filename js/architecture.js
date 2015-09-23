@@ -41,15 +41,15 @@
 // This means that a tile is not marked
 
 
-var shipSize = 6;
+// var shipSize = 6;
 
-var createShipMarkedArray = function() {
-  var isNotHit = [];
-  for (var i = 0; i < shipSize; i++) {
-    isNotHit.push(0);
-  }
-  return isNotHit;
-}
+// var createShipMarkedArray = function() {
+//   var isNotHit = [];
+//   for (var i = 0; i < shipSize; i++) {
+//     isNotHit.push(0);
+//   }
+//   return isNotHit;
+// }
 
 // var shipSize = 3;
 // assert(createShipMarkedArray().length === [0, 0, 0], "isMarked returns an array of [0, 0, 0] when the shipSize is 3");

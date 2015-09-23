@@ -33,8 +33,36 @@ var shipSink = function(){
 var shipHits = function(){
   return false;
 }
+// var shipSize = 6;
 
+var createShipMarkedArray = function(ship) {
+  var isNotHit = [];
+  for (var i = 0; i < ship.shipSize; i++) {
+    isNotHit.push(0);
+  }
+  console.log(ship);
+  return isNotHit;
+}
+var setShip = function() {
+  
+  for (var row = 0; row < 10; row++) {
+    
+    var boardRow = [];
+    
+    for (var column = 0; column < 10; column++) {
+      // We are creating an Object (can create constructor in another location)
+      var position = "" + row + "" + column;
 
+      $("#position-" + position).click(function(e) {
+        console.log(e);
+        $("#" + e.target.id).css("background-color", "blue");
+        //alert(e.target.id);
+      });
+    }
+  }
+}
+
+setShip();
 
 var getPositions = function() {
   
@@ -47,6 +75,7 @@ var getPositions = function() {
       var position = "" + row + "" + column;
 
       $("#position-" + position).click(function(e) {
+        console.log(e);
         $("#" + e.target.id).html("X");
         //alert(e.target.id);
       });
