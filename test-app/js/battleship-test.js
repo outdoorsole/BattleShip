@@ -10,6 +10,7 @@ assert(Players(), "Returns the functionality of Player 1 or Play 2");
 assert(Scoreboard(), "Returns score of current player");
 
 assert(submarine instanceof Ship, "Checking if Submarine instance is correct");
+
 assert(destroyer instanceof Ship,"Checking the destroyer instance");
 
 assert(shipSink(), "Checks for ships that are sinked");
