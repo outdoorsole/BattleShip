@@ -6,7 +6,9 @@ var startGame = function(){
 function Ship(shipSize,shipType){
   this.shipSize = shipSize || 0;
   this.shipType = shipType;
+  return this;
 }
+
 var submarine = new Ship(3, "Submarine");
 var destroyer = new Ship(3,"Destroyer");
 var patrolBoat = new Ship(2, "Patrol Boat");
