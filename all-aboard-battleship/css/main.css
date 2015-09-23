@@ -1,10 +1,30 @@
-[class*=col-]{
-	padding-top: 5px;
-	background-color: #eee;
-	border: 1px solid #ddd;
-	height: 100px;
+/*[class*=col] {*/
+/*  padding-top: 5px;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  max-height: 100px;
+}
+*/
+#gameboard {
+  margin: 50px;
 }
 
-#gameboard{
-	margin: 50px;
+.row > div {
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin: 1px;
+  padding: 1px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.screen-2 {
+  width: 400px;
+  height: 400px;
+  float: ;
+  margin: 1px;
+  padding: 1px;
+  border: 1px solid black;
+  background-color: white;
 }

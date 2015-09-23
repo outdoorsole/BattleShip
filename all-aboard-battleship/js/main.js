@@ -33,11 +33,35 @@ var shipHits = function(){
   return false;
 }
 
-var markTile = function() {
-  $("#position-00").html("X");
-};
 
-$("#position-00").click(markTile);
+
+var getPositions = function() {
+  // var gameBoard = [];
+
+  for (var row = 0; row < 10; row++) {
+    var boardRow = [];
+    for (var column = 0; column < 10; column++) {
+      // We are creating an Object (can create constructor in another location)
+      var position = "" + row + "" + column;
+
+      $("#position-" + position).click(function() {
+        for (var i = 0; i < 10; i++) {
+          for (var j = 0; j < 10; j++) {
+            var position2 = "" + i + "" + j;
+            $("#position-" + position2).html("X");
+          }
+        }
+      });
+    }
+  }
+  // return gameBoard;
+}
+
+getPositions();
+
+
+
+
 
 // function SquareTile() {
 //   position:
