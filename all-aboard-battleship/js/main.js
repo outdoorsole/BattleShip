@@ -44,13 +44,9 @@ var getPositions = function() {
       // We are creating an Object (can create constructor in another location)
       var position = "" + row + "" + column;
 
-      $("#position-" + position).click(function() {
-        for (var i = 0; i < 10; i++) {
-          for (var j = 0; j < 10; j++) {
-            var position2 = "" + i + "" + j;
-            $("#position-" + position2).html("X");
-          }
-        }
+      $("#position-" + position).click(function(e) {
+        $("#" + e.target.id).html("X");
+        //alert(e.target.id);
       });
     }
   }
