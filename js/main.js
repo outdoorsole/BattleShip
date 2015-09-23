@@ -6,6 +6,7 @@ var startGame = function(){
 function Ship(shipSize,shipType){
   this.shipSize = shipSize || 0;
   this.shipType = shipType;
+  return this;
 }
 
 var submarine = new Ship(3, "Submarine");
@@ -36,10 +37,11 @@ var shipHits = function(){
 
 
 var getPositions = function() {
-  // var gameBoard = [];
-
+  
   for (var row = 0; row < 10; row++) {
+    
     var boardRow = [];
+    
     for (var column = 0; column < 10; column++) {
       // We are creating an Object (can create constructor in another location)
       var position = "" + row + "" + column;
@@ -50,15 +52,6 @@ var getPositions = function() {
       });
     }
   }
-  // return gameBoard;
 }
 
 getPositions();
-
-
-
-
-
-// function SquareTile() {
-//   position:
-// }
