@@ -3,9 +3,6 @@ var GameManager = function() {
    setShip();
   };
 
-  this.listShips = function() {
-
-  }
 
   // this.getShip = function() {
   //   return
@@ -16,10 +13,22 @@ var GameManager = function() {
   };
 
   var submarine = new Ship(3, "Submarine");
-  var destroyer = new Ship(3,"Destroyer");
+  var destroyer = new Ship(3, "Destroyer");
   var patrolBoat = new Ship(2, "Patrol Boat");
   var battleship = new Ship(4, "Battleship");
   var aircraftCarrier = new Ship(5, "Aircraft Carrier");
+  
+  var shipArray = [];
+  shipArray.push(submarine, destroyer, patrolBoat, battleship, aircraftCarrier);
+  
+  this.listShips = function() {
+    for(var i = 0; i <shipArray.length; i++){
+      $(".ships").append(shipArray[i].shipType);
+      $(".ships").append(" ");
+    }
+    return shipArray;
+  }
+
   var selectedShip;
 
   var createShipMarkedArray = function(ship) {
