@@ -3,16 +3,17 @@ var GameManager = function() {
    setShip();
   };
 
-  var setShip = function(ship) {
-    $(".tile").click(setLocation); 
-  };
+  this.listShips = function() {
 
-  function Ship(shipSize,shipType,shipLocation){
-    this.shipSize = shipSize || 0;
-    this.shipType = shipType;
-    this.shipLocation = [];
-    return this;
   }
+
+  // this.getShip = function() {
+  //   return
+  // }
+
+  var setShip = function(ship) {
+    $(".tile").click(setLocation);
+  };
 
   var submarine = new Ship(3, "Submarine");
   var destroyer = new Ship(3,"Destroyer");
@@ -20,24 +21,6 @@ var GameManager = function() {
   var battleship = new Ship(4, "Battleship");
   var aircraftCarrier = new Ship(5, "Aircraft Carrier");
   var selectedShip;
-
-  var Players = function(){
-    return false;
-  };
-
-
-  var Scoreboard = function(){
-    return false;
-  };
-
-
-  var shipSink = function(){
-    return false;
-  }
-
-  var shipHits = function(){
-    return false;
-  }
 
   var createShipMarkedArray = function(ship) {
     var isNotHit = [];
@@ -49,18 +32,18 @@ var GameManager = function() {
   }
 
   var setLocation = function(e) {
-          
+
     $("#" + e.target.id).css("background-color", "blue");
     var initialShipPosition = e.target.id.substring(9, 11);
-          
+
     submarine.shipLocation.push(initialShipPosition);
   };
 
   var getPositions = function() {
-    
-    for (var row = 0; row < 10; row++) {    
+
+    for (var row = 0; row < 10; row++) {
       var boardRow = [];
-      
+
       for (var column = 0; column < 10; column++) {
         var rowCol = "" + row + "" + column;
 

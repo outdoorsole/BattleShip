@@ -4,12 +4,23 @@
     <title>Battleship</title>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/main.css"/>
+    <!--3) Drag and drop-->
+    <script src="js/drag-and-drop.js"></script>
   </head>
   <body>
     <article id="gameboard">
       <h1>Battleship</h1>
+
+      <div class="ships">
+        <div id="submarine" draggable="true" ondragstart="drag(event)">Submarine</p></div>
+        <p>Patrol Boat</p>
+        <p>Destroyer</p>
+        <p>Battleship</p>
+        <p>Aircrafter</p>
+      </div>
+
       <div class="row">
-        <div class="col-xs-1 tile" id="position-00"></div>
+        <div class="col-xs-1 tile" id="position-00" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
         <div class="col-xs-1 tile" id="position-01"></div>
         <div class="col-xs-1 tile" id="position-02"></div>
         <div class="col-xs-1 tile" id="position-03"></div>
@@ -148,10 +159,22 @@
     <!--2) Bootstrap-->
     <script src="js/bootstrap.min.js"></script>
 
+    <!--4) Ship js -->
+    <script src="js/ship.js"></script>
+
+    <!--5) Player js -->
+    <script src="js/player.js"></script>
+
+    <!--6) Scoreboard js -->
+    <script src="js/scoreboard.js"></script>
+
+    <!--7) Shiphits js -->
+    <script src="js/shiphits.js"></script>
+
+    <!--8) Shipsink js -->
+    <script src="js/shipsink.js"></script>
+
     <!--3) Main Game js -->
     <script src="js/main.js"></script>
-
-    <!--4) architecture js -->
-    <script src="js/architecture.js"></script>
   </body>
 </html>
