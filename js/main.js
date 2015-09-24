@@ -1,12 +1,8 @@
 var GameManager = function() {
   this.startGame = function() {
    setShip();
+   listShips();
   };
-
-
-  // this.getShip = function() {
-  //   return
-  // }
 
   var setShip = function(ship) {
     $(".tile").click(setLocation);
@@ -21,7 +17,7 @@ var GameManager = function() {
   var shipArray = [];
   shipArray.push(submarine, destroyer, patrolBoat, battleship, aircraftCarrier);
   
-  this.listShips = function() {
+  var listShips = function() {
     for(var i = 0; i <shipArray.length; i++){
       $(".ships").append(shipArray[i].shipType);
       $(".ships").append(" ");
@@ -48,20 +44,22 @@ var GameManager = function() {
     submarine.shipLocation.push(initialShipPosition);
   };
 
+  var markTile = function(e) {
+    console.log(e);
+    $("#" + e.target.id).html("X");
+  }
+
   var getPositions = function() {
 
-    for (var row = 0; row < 10; row++) {
-      var boardRow = [];
+    // for (var row = 0; row < 10; row++) {
+    //   var boardRow = [];
 
-      for (var column = 0; column < 10; column++) {
-        var rowCol = "" + row + "" + column;
+    //   for (var column = 0; column < 10; column++) {
+    //     var rowCol = "" + row + "" + column;
 
-        $("#position-" + rowCol).click(function(e) {
-          console.log(e);
-          $("#" + e.target.id).html("X");
-        });
-      }
-    }
+        $(".tile").click(markTile);
+    //   }
+    // }
   }
   getPositions();
 }
