@@ -1,12 +1,19 @@
 var GameManager = function() {
   this.startGame = function() {
    setShip();
-   listShips();
+   this.listShips();
+   this.showGameBoard();
   };
 
   var setShip = function(ship) {
     $(".tile").click(setLocation);
   };
+
+  var gameboard = new GameBoard("position-00");
+  
+  this.showGameBoard = function(){
+    return gameboard;
+  }
 
   var submarine = new Ship(3, "Submarine");
   var destroyer = new Ship(3, "Destroyer");
@@ -17,7 +24,7 @@ var GameManager = function() {
   var shipArray = [];
   shipArray.push(submarine, destroyer, patrolBoat, battleship, aircraftCarrier);
   
-  var listShips = function() {
+  this.listShips = function() {
     for(var i = 0; i <shipArray.length; i++){
       $(".ships").append(shipArray[i].shipType);
       $(".ships").append(" ");
