@@ -32,7 +32,8 @@ var GameManager = function() {
     return shipArray;
   }
 
-  var selectedShip;
+  // This variable does not work right now.
+  // var selectedShip;
 
   var createShipMarkedArray = function(ship) {
     var isNotHit = [];
@@ -45,10 +46,35 @@ var GameManager = function() {
 
   var setLocation = function(e) {
 
-    $("#" + e.target.id).css("background-color", "blue");
+    $("#" + e.target.id).css("background-color", "blue"); 
     var initialShipPosition = e.target.id.substring(9, 11);
+    var num = parseInt(initialShipPosition);
 
-    submarine.shipLocation.push(initialShipPosition);
+    console.log(num);
+
+    if (num >= 0 && num <= 9) {
+      var nextPosition = num;
+      nextPosition++;
+      for (var i = 0; i < 2; i++) {
+        $("#position-0" + nextPosition).css("background-color", "blue");
+        nextPosition++;
+      }
+    }
+    else {
+      var nextPosition = num;
+      nextPosition++;
+      for (var i = 0; i < 2; i++) {
+        $("#position-" + nextPosition).css("background-color", "grey");
+        nextPosition++;        
+      }
+    }
+
+    // submarine.shipLocation.push(num + 1);
+    // submarine.shipLocation.push(num + 2);
+
+    for(var i = 0; i < 3; i++) {
+      submarine.shipLocation.push(num + i); 
+    }
   };
 
   var markTile = function(e) {
