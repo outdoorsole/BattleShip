@@ -1,14 +1,9 @@
 
 var GameManager = function() {
   this.startGame = function() {
-   // setShip();
    this.listShips();
    this.showGameBoard();
   };
-
-  // var setShip = function(ship) {
-  //   $(".tile").click(setLocation);
-  // };
 
   var gameboard = new GameBoard("position-00");
   
@@ -34,11 +29,6 @@ var GameManager = function() {
   }
 
   this.listShips = function() {
-    // This code will now be hardcoded into the html
-    // for(var i = 0; i <shipArray.length; i++){
-    //   $(".ships").append(shipArray[i].shipType);
-    //   $(".ships").append(" ");
-    // }
     return shipArray;
   }
 
@@ -58,18 +48,15 @@ var GameManager = function() {
     selectedShip = length;
   }
 
-  this.setLocation = function(e) {
+  this.setLocation = function(num) {
     //Marks the initial position where ship is placed
-    $("#" + e.target.id).css("background-color", "blue"); 
-    var initialShipPosition = e.target.id.substring(9, 11);
-    var num = parseInt(initialShipPosition);
-
+     
     console.log(num);
     //if the initial position is a single digit number, add additional number to make the id a double digit number. Line 54-70, it marks the location and length on the board.
     if (num >= 0 && num <= 9) {
       var nextPosition = num;
       nextPosition++;
-      for (var i = 0; i < selectedShip-1; i++) {
+      for (var i = 0; i < selectedShip; i++) {
         $("#position-0" + nextPosition).css("background-color", "red");
         nextPosition++;
       }
@@ -78,7 +65,7 @@ var GameManager = function() {
     else {
       var nextPosition = num;
       nextPosition++;
-      for (var i = 0; i < selectedShip-1; i++) {
+      for (var i = 0; i < selectedShip; i++) {
         $("#position-" + nextPosition).css("background-color", "grey");
         nextPosition++;        
       }
@@ -95,37 +82,36 @@ var GameManager = function() {
   }
 
   var getPositions = function() {
-    // for (var row = 0; row < 10; row++) {
-    //   var boardRow = [];
-
-    //   for (var column = 0; column < 10; column++) {
-    //     var rowCol = "" + row + "" + column;
-
-        $(".tile").click(markTile);
-    //   }
-    // }
+    $(".tile").click(markTile);
   }
-  getPositions();
+  //getPositions();
 }
 
 var gameManager = new GameManager();
 gameManager.startGame();
 
-$(".tile").click(gameManager.setLocation);
+$(".tile").click(function(e){
+  var initialShipPosition = e.target.id.substring(9, 11);
+  var num = parseInt(initialShipPosition);
+  gameManager.setLocation(num);
+});
 
-$("#submarine")
-  .click(function() {
+$("#submarine").click(function() {
     gameManager.setSelectedShip(3);
   });
+
 $("#patrol-boat").click(function() {
   gameManager.setSelectedShip(2);
 });
+
 $("#destroyer").click(function() {
   gameManager.setSelectedShip(3);
 });
+
 $("#battleship").click(function() {
   gameManager.setSelectedShip(4);
 });
+
 $("#aircraft-carrier").click(function() {
   gameManager.setSelectedShip(5);
 });

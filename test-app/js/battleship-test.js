@@ -19,4 +19,4 @@ assert(shipHits(),"Checks whether ship is hit or missed");
 
 assert(shipMiss(), "Checks for missed spots on the gameboard");
 
-assert(buildGameBoard(), "Returns the array of arrays to show the gameboard as result");
+aasert(setLocation(),)
