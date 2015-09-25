@@ -5,10 +5,10 @@ var GameManager = function() {
   };
 
 //will be expanding ship location information to gameboard //
-  // var gameboard = new GameBoard("position-00");
-  // this.showGameBoard = function(){
-  //   return gameboard;
-  // }
+  var gameboard = new GameBoard("position-00");
+  this.showGameBoard = function(){
+    return gameboard;
+  }
 
   var submarine = new Ship(3, "Submarine");
   var destroyer = new Ship(3, "Destroyer");
@@ -16,8 +16,7 @@ var GameManager = function() {
   var battleship = new Ship(4, "Battleship");
   var aircraftCarrier = new Ship(5, "Aircraft Carrier");
 
-  var shipArray = [];
-  shipArray.push(submarine, destroyer, patrolBoat, battleship, aircraftCarrier);
+  var shipArray = [submarine, destroyer, patrolBoat, battleship, aircraftCarrier];
 
   this.listShips = function() {
     return shipArray;
