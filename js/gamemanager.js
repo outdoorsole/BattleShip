@@ -1,14 +1,14 @@
 var GameManager = function() {
   this.startGame = function() {
    this.listShips();
-   this.showGameBoard();
+   // this.showGameBoard();
   };
 
 //will be expanding ship location information to gameboard //
-  var gameboard = new GameBoard("position-00");
-  this.showGameBoard = function(){
-    return gameboard;
-  }
+  // var gameboard = new GameBoard("position-00");
+  // this.showGameBoard = function(){
+  //   return gameboard;
+  // }
 
   var submarine = new Ship(3, "Submarine");
   var destroyer = new Ship(3, "Destroyer");
@@ -26,6 +26,7 @@ var GameManager = function() {
 
   this.setSelectedShip = function(length){
     selectedShip = length;
+    return selectedShip;
   }
 
   this.setLocation = function(num) {
@@ -53,9 +54,9 @@ var GameManager = function() {
     }
   };
 
-  var markTile = function(e) {
-    console.log(e);
-    $("#" + e.target.id).html("X");
+this.markTile = function(id) {
+    console.log(id);
+    $("#" + id).html("X");
   }
 
   var getPositions = function() {

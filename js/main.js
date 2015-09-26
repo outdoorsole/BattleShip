@@ -26,3 +26,7 @@ $("#battleship").click(function() {
 $("#aircraft-carrier").click(function() {
   gameManager.setSelectedShip(5);
 });
+
+$(".tile").click(function(e) {
+  gameManager.markTile(e.target.id);
+})
