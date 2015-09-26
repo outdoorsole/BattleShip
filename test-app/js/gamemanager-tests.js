@@ -2,13 +2,17 @@
 
 // assert(gameManager.setSelectedShip(selectedShipLength) === 10, "this returns the value of the ship length we set");
 
+var gameManager = new GameManager();
+
+// gameboard
+// players constructor
+// construct ships
 
 
-assert(false, "returns a new instance of GameManager");
+var testGameBoard = new GameBoard();
+// gameBoard === ??some-property-of-gameboard.....
 
-
-
-// display gameboard
-// call gameboard in init function - createGameBoard (method on GameBoard class)
-
+assert(, "returns a new instance of GameManager");
+assert(player1.missArr === [], "player one's array should be empty");
+assert(p1.hitCheck(AS) === "miss", "should miss because no ship objects on board");
 

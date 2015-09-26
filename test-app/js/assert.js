@@ -13,9 +13,8 @@ function assert(outcome,description){
 		list.append("<li>Fail: " + description + "</li>");
 		//$("#output").append("Fail: " + description);
 	}
-
+}
 
 
 	//build <li>
 	//list.append("Pass: " + outcome);
-}
