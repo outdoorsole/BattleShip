@@ -1,4 +1,10 @@
 var GameManager = function() {
+
+  this.init = function() {
+    return false;
+  }
+};
+
 // init method : it's going to initialize the game - launches
 //gameboard : makes ships available for selection : displays
 //players active vs. inactive ships : constructs ships : manages
@@ -29,8 +35,6 @@ var GameManager = function() {
 //inclusion of score) > end turn > switch turn > restart in game manager
 
 //communicate end game (victory for p1 or p2)
-
-};
 
 
 

@@ -7,26 +7,28 @@ $(".tile").click(function(e){
   gameManager.setLocation(num);
 });
 
-$("#submarine").click(function() {
-    gameManager.setSelectedShip(3);
-  });
+// rewrite this into 3 lines
 
-$("#patrol-boat").click(function() {
-  gameManager.setSelectedShip(2);
-});
+// $("#submarine").click(function() {
+//     gameManager.setSelectedShip(3);
+//   });
 
-$("#destroyer").click(function() {
-  gameManager.setSelectedShip(3);
-});
+// $("#patrol-boat").click(function() {
+//   gameManager.setSelectedShip(2);
+// });
 
-$("#battleship").click(function() {
-  gameManager.setSelectedShip(4);
-});
+// $("#destroyer").click(function() {
+//   gameManager.setSelectedShip(3);
+// });
 
-$("#aircraft-carrier").click(function() {
-  gameManager.setSelectedShip(5);
-});
+// $("#battleship").click(function() {
+//   gameManager.setSelectedShip(4);
+// });
 
-$(".tile").click(function(e) {
-  gameManager.markTile(e.target.id);
-})
+// $("#aircraft-carrier").click(function() {
+//   gameManager.setSelectedShip(5);
+// });
+
+// $(".tile").click(function(e) {
+//   gameManager.markTile(e.target.id);
+// })
