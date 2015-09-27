@@ -1,9 +1,15 @@
-var Player = function(name,shipHit,shipMiss){
-	this.name = name || "";
+var Player = function(playerName,shipHit,shipMiss){
+	this.playerName = name || "";
 	this.shipHit = [];
 	this.shipMiss = [];
-	return this.shipHit;
+	// return this.shipHit;
 };
+
+Player.prototype = {
+	getPlayerProp: function () {
+		return this;
+	}
+}
 
 var player1 = new Player("Player1");
 var player2 = new Player("Player2");
