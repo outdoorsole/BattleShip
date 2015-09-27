@@ -1,12 +1,18 @@
-// Make some test cases first
-// Set up work
-// Make a few different ships
-// Set them to have certain properties
-// 1) ship sunk ; 2) ship not sunk
+/*
+// Properties:
+ShipType: the type of ship
+ShipSize: the size of the ship
+ShipLocation: the location on the board that the ship is placed by the player
+PlayerNumber: the player the ship belongs to
 
-var shouldBeSunkShip = new Ship(2, "Sunk Ship");
-var result = shouldBeSunkShip.shipHit();
-assert( result === false, "The ship should not be sunk in this case." );
+// Methods:
+  - displayShipOnBoard: display the ship properties on the board. --> sounds like the game Manager should invoke this
+  - placeShipOnBoard: be able to place a ship on the board
+  - getShipProperties: be able to get the ship properties to pass to another function
+  - shipHit: check to see if the ship location was hit
 
-var result2 = shouldBeSunkShip.shipHit();
-assert( result2 === true, "The ship should be sunk in this case." );
+*/
+
+var submarine = new Ship("Submarine", 3);
+
+
