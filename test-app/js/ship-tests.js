@@ -16,3 +16,9 @@ PlayerNumber: the player the ship belongs to
 var submarine = new Ship("Submarine", 3);
 
 // assert(submarine instanceof Ship, "A ship was created from the ship constructor");
+
+// assert(displayShipOnBoard, "displays ships on the board.");
+
+// assert(getShipProperties, "be able to get the ship properties to pass to another function");
+
+// assert(shipHit, check to see if the ship location was hit);

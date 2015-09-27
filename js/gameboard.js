@@ -24,3 +24,33 @@
 //hit or missed and record that information
 
 //
+
+
+var boardSize = 100;
+
+// version 2: Creates a gameboard of any size
+
+// var createGameBoard = function(size) {
+//   var boardWidth = Math.sqrt(size);
+//   for (var i = 0; i < size; i++) {
+//     if (i % boardWidth === 0) {
+//       $('.gameboard').append('<div class="row"></div>');
+//     }
+//     $('.gameboard').append('<div class="gameboard-tile col-xs-1"></div>');
+//   }
+// }
+
+// createGameBoard(boardSize);
+
+// -------------------------------------------------------------------//
+// add id to the tiles with the row and column postion on the board
+
+// var addIdToGameBoard = function() {
+  // for (var i = 0; i < boardSize; i++) {
+//     $('.gameboard-tile').attr('id', function(num){
+//       return 'board-position' + num;
+//     });
+//   // }
+// // }
+
+// addIdToGameBoard();
