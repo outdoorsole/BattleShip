@@ -1,9 +1,9 @@
-function Ship (shipType, shipSize, shipLocationArray, player) {
+function Ship (shipType, shipSize, player, shipLocationArray) {
   this.shipType = shipType;
   this.shipSize = shipSize || 0;
-  this.shipLocation = ["No current location."];
   this.Player = player;
-}
+  this.shipLocation = ["No current location."];
+  }
 
 Ship.prototype = {
   getShipProperties: function() {

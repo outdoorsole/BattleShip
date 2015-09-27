@@ -2,7 +2,8 @@
 
 // assert(gameManager.setSelectedShip(selectedShipLength) === 10, "this returns the value of the ship length we set");
 
-var gameManager = new GameManager();
+
+// assert()
 
 
 var testGetShip = new Ship();
@@ -17,10 +18,15 @@ assert(testPlayer.getPlayerProp().shipHit.length === 0, "Testing to make sure sh
 
 assert(testPlayer.getPlayerProp().shipMiss.length === 0, "Testing to make sure shipMiss array length is 0 at initiation of game.");
 
+// gameManager.resetInit();
+
+assert(gameManager.player1.shipHit.length === 0, "If passes then shipHit array was successfully reset.")
 
 
 
-// gameboard
+
+
+
 // players constructor
 // construct ships
 

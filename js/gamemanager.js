@@ -1,16 +1,58 @@
 var GameManager = function() {
 
+	this.player1;
+	this.player2;
+	this.submarineP1;
+	this.patrolBoatP1;
+	this.destroyerP1;
+	this.battleshipP1;
+	this.aircraftCarrierP1;
+	this.submarineP2;
+	this.patrolBoatP2;
+	this.destroyerP2;
+	this.battleshipP2;
+	this.aircraftCarrierP2;
+	
+  
   this.init = function() {
-    return false;
-  }
+  	
+  	this.player1 = new Player("Player1");
+	this.player2 = new Player("Player2");
+
+
+	this.submarineP1 = new Ship("Submarine", 3, "Player 1");
+	this.patrolBoatP1 = new Ship("Patrol Boat", 2, "Player 1");
+	this.battleshipP1 = new Ship("Battleship", 4, "Player 1");
+	this.aircraftCarrierP1 = new Ship("Aircraft Carrier", 5, "Player 1");
+	this.destroyerP1 = new Ship("Destroyer", 3, "Player 1");
+
+	this.submarineP2 = new Ship("Submarine", 3, "Player 1");
+	this.patrolBoatP2 = new Ship("Patrol Boat", 2, "Player 1");
+	this.battleshipP2 = new Ship("Battleship", 4, "Player 1");
+	this.aircraftCarrierP2 = new Ship("Aircraft Carrier", 5, "Player 1");
+	this.destroyerP2 = new Ship("Destroyer", 3, "Player 1");
+
+		return this;
+   }
+  this.resetInit = function() {
+	this.player1.shipHit.length = 0;
+	this.player1.shipMiss.length = 0;
+	this.player2.shipHit.length = 0;
+	this.player2.shipMiss.length = 0;
+}
 };
+
+var gameManager = new GameManager();
+gameManager.init();
+
+
 
 // init method : it's going to initialize the game - launches
 //gameboard : makes ships available for selection : displays
 //players active vs. inactive ships : constructs ships : manages
 //event handlers :
 
-// Reset method that runs the init method / method to clear board
+// Reset method that runs the init method / method to clear board X
 
 // allows access to gameboard  for control of gameboard methods
 

@@ -13,7 +13,7 @@ PlayerNumber: the player the ship belongs to
 
 */
 
-var submarine = new Ship("Submarine", 3);
+// var submarine = new Ship("Submarine", 3);
 
 // assert(submarine instanceof Ship, "A ship was created from the ship constructor");
 

@@ -1,18 +1,25 @@
-var Player = function(playerName,shipHit,shipMiss){
+var Player = function(name,shipHit,shipMiss){
 	this.playerName = name || "";
-	this.shipHit = [];
-	this.shipMiss = [];
+	this.shipHit =  shipHit || [];
+	this.shipMiss = shipMiss || [];
 	// return this.shipHit;
 };
 
 Player.prototype = {
 	getPlayerProp: function () {
 		return this;
+	},
+	recordShipHit: function (target) {
+		this.shipHit.push(target);
+		return this.shipHit;
+	},
+	recordShipMiss: function (target) {
+		this.shipMiss.push(target);
+		return this.shipMiss;
 	}
 }
 
-var player1 = new Player("Player1");
-var player2 = new Player("Player2");
+
 
 
 

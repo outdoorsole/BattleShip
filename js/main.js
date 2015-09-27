@@ -1,11 +1,11 @@
-var gameManager = new GameManager();
-gameManager.startGame();
+// var gameManager = new GameManager();
+// gameManager.startGame();
 
-$(".tile").click(function(e){
-  var initialShipPosition = e.target.id.substring(9, 11);
-  var num = parseInt(initialShipPosition);
-  gameManager.setLocation(num);
-});
+// $(".tile").click(function(e){
+//   var initialShipPosition = e.target.id.substring(9, 11);
+//   var num = parseInt(initialShipPosition);
+//   gameManager.setLocation(num);
+// });
 
 // rewrite this into 3 lines
 
