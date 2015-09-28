@@ -5,6 +5,7 @@ function GameManager() {
   var selectedShip = "";
 
   this.getSelectedShip = function(){
+    console.log(selectedShip);
     return selectedShip;
   }
 

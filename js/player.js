@@ -10,8 +10,16 @@ function Player(name,shipHit,shipMiss) {
   ships.push(new Ship("Aircraft Carrier", 5));
   ships.push(new Ship("Destroyer", 3));
 
-  this.getSubmarine = function () {
-    return ships[0];
+  // this.getShip = function () {
+  //   console.log(ships[0]);
+  //   for (var i = 0; i < ships.length; i++) {
+  //     if (gameManager.getSelectedShip() === ships[i])
+  //       return ships[i];
+  //   }
+  // };
+
+  this.getShipLocation = function(index) {
+    return ships[index].shipLocation;
   };
 
   this.getPlayerProp = function () {
@@ -35,9 +43,10 @@ function Player(name,shipHit,shipMiss) {
       }
     }
   };
-  this.setShip = function () {
+  // this.setShip = function (shipLocation) {
+  //   // Ships[shipName].location = shipLocation
 
-  }
+  // }
 }
 
 // Player.prototype.getPlayerProp = function () {

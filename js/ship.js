@@ -7,6 +7,7 @@ function Ship (shipType, shipSize, locationArray) {
     this.shipLocation.length = 0;
     for (var i = 0; i < this.shipSize; i++) {
       this.shipLocation.push(id + i);
+      $("#board-position" + (id + i)).css("background-color", "red");
     }
   }
 }
@@ -15,17 +16,20 @@ Ship.prototype.getShipProperties = function() {
   return this;
 };
 
-Ship.prototype.displayShipOnBoard = function() {
-  var ship = $('<div class="' + this.shipType + '"></div');
-  this.$ship = $(ship);
-  this.$ship
-    .append('<p id="' + this.shipType + '-name">' + this.shipType + '</p>')
-    .append('<p id="' + this.shipType + '-ship-length">' + this.shipSize + '</p>')
-    .append('<p id="' + this.shipType + '-ship-location">' + this.getLocation + '</p>')
-    .on('click', function(e) {
-      console.log($(this).attr('class'), 'clicked');
-    });
-  $('#ships').append(this.$ship);
+
+// Ship.prototype.displayShipOnBoard = function() {
+//   var ship = $('<div class="' + this.shipType + '"></div');
+//   this.$ship = $(ship);
+//   this.$ship
+//     .append('<p id="' + this.shipType + '-name">' + this.shipType + '</p>')
+//     .append('<p id="' + this.shipType + '-ship-length">' + this.shipSize + '</p>')
+//     .append('<p id="' + this.shipType + '-ship-location">' + this.getLocation + '</p>')
+//     .on('click', function(e) {
+//       console.log($(this).attr('class'), 'clicked');
+//     });
+//   $('#ships').append(this.$ship);
+
+
 
   // gameManager.player1.getShipByType("Submarine").placeShipOnBoard();
 
@@ -47,7 +51,7 @@ Ship.prototype.displayShipOnBoard = function() {
 //   var num = parseInt(initialShipPosition);
 //   gameManager.player1.selectAShip(num);
 // });
-};
+// };
 
 // Ship.prototype.placeShipOnBoard = function(num) {
 //   this.shipLocation = [];

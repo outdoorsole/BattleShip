@@ -1,15 +1,7 @@
 var gameManager = new GameManager();
 gameManager.init();
 
-$(".gameboard-tile").on('click', function(e) {
-    console.log(e);
-    console.log("A tile has been clicked");
-    var initialShipPosition = e.target.id.substring(14, 16);
-    var numInitialShipPosition = parseInt(initialShipPosition);
-    gameManager.player1.getShipByType(gameManager.selectAShip()).setShipLocation(numInitialShipPosition);
-});
-
-
+// User will click on a ship on the board
 $(".submarine").click(function() {
     gameManager.setSelectedShip("Submarine");
   });
@@ -29,6 +21,18 @@ $(".battleship").click(function() {
 $(".aircraft-carrier").click(function() {
   gameManager.setSelectedShip("Aircraft Carrier");
 });
+
+// User will click on a tile where they want their ship placed
+$(".gameboard-tile").on('click', function(e) {
+    console.log("A tile has been clicked");
+    var initialShipPosition = e.target.id.substring(14, 16);
+    var numInitialShipPosition = parseInt(initialShipPosition);
+    gameManager.player1.getShipByType(gameManager.getSelectedShip()).setShipLocation(numInitialShipPosition);
+    console.log(numInitialShipPosition);
+});
+
+
+
 
 
 
