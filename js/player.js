@@ -25,7 +25,14 @@ Player.prototype.recordShipMiss = function (target) {
 	return this.shipMiss;
 };
 
-
+Player.prototype.getShipByType = function (shipType) {
+  for (var i = 0; i < this.ships.length; i++) {
+    if (this.ships[i].shipType === shipType) {
+      return this.ships[i];
+    }
+  }
+  return;
+}
 
 
 

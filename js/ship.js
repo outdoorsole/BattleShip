@@ -1,7 +1,6 @@
-function Ship (shipType, shipSize, player, locationArray) {
+function Ship (shipType, shipSize, locationArray) {
   this.shipType = shipType;
   this.shipSize = shipSize || 0;
-  this.Player = player;
   this.getLocation = ["No current location."];
 }
 
@@ -10,10 +9,32 @@ Ship.prototype.getShipProperties = function() {
 };
 
 Ship.prototype.displayShipOnBoard = function() {
-  $('#ships').append('<div class="' + this.shipType + '"></div');
-  $('#ships').append('<p id="' + this.shipType + '-name">' + this.shipType + '</p>');
-  $('#ships').append('<p id="' + this.shipType + '-ship-length">' + this.shipSize + '</p>');
-  $('#ships').append('<p id="' + this.shipType + '-ship-location">' + this.shipLocation + '</p>');
+  var ship = $('<div class="' + this.shipType + '"></div');
+  this.$ship = $(ship);
+  this.$ship
+    .append('<p id="' + this.shipType + '-name">' + this.shipType + '</p>')
+    .append('<p id="' + this.shipType + '-ship-length">' + this.shipSize + '</p>')
+    .append('<p id="' + this.shipType + '-ship-location">' + this.getLocation + '</p>')
+    .on('click', function(e) {
+      console.log($(this).attr('class'), 'clicked');
+    });
+  $('#ships').append(this.$ship);
+
+  // gameManager.player1.getShipByType("Submarine").placeShipOnBoard();
+
+  $(".gameboard-tile").on('click', function(e) {
+    console.log(e);
+    console.log("A tile has been clicked");
+    var initialShipPosition = e.target.id.substring(14, 16);
+    console.log(initialShipPosition);
+    return initialShipPosition;
+  });
+
+// $(".gameboard-tile").click(function(e){
+//   var initialShipPosition = e.target.id.substring(14, 15);
+//   var num = parseInt(initialShipPosition);
+//   gameManager.player1.selectAShip(num);
+// });
 };
 
 Ship.prototype.placeShipOnBoard = function(num) {

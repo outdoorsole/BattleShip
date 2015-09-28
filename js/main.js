@@ -1,11 +1,11 @@
 // var gameManager = new GameManager();
 // gameManager.startGame();
 
-$(".gameboard-tile").click(function(e){
-  var initialShipPosition = e.target.id.substring(14, 15);
-  var num = parseInt(initialShipPosition);
-  gameManager.player1.selectAShip(num);
-});
+// $(".gameboard-tile").click(function(e){
+//   var initialShipPosition = e.target.id.substring(14, 15);
+//   var num = parseInt(initialShipPosition);
+//   gameManager.player1.selectAShip(num);
+// });
 
 
 // rewrite this into 3 lines
