@@ -2,6 +2,13 @@ function Player(name,shipHit,shipMiss) {
   this.playerName = name || "";
   this.shipHit =  shipHit || [];
   this.shipMiss = shipMiss || [];
+
+  this.ships = [];
+  this.ships.push(new Ship("Submarine", 3));
+  this.ships.push(new Ship("Patrol Boat", 2));
+  this.ships.push(new Ship("Battleship", 4));
+  this.ships.push(new Ship("Aircraft Carrier", 5));
+  this.ships.push(new Ship("Destroyer", 3));
 }
 
 Player.prototype.getPlayerProp = function () {
@@ -17,6 +24,8 @@ Player.prototype.recordShipMiss = function (target) {
 	this.shipMiss.push(target);
 	return this.shipMiss;
 };
+
+
 
 
 

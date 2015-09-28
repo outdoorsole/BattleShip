@@ -18,17 +18,11 @@ GameManager.prototype.init = function() {
   this.player1 = new Player("Player1");
 	this.player2 = new Player("Player2");
 
-	this.submarineP1 = new Ship("Submarine", 3, "Player 1");
-	this.patrolBoatP1 = new Ship("Patrol Boat", 2, "Player 1");
-	this.battleshipP1 = new Ship("Battleship", 4, "Player 1");
-	this.aircraftCarrierP1 = new Ship("Aircraft Carrier", 5, "Player 1");
-	this.destroyerP1 = new Ship("Destroyer", 3, "Player 1");
-
-	this.submarineP2 = new Ship("Submarine", 3, "Player 1");
-	this.patrolBoatP2 = new Ship("Patrol Boat", 2, "Player 1");
-	this.battleshipP2 = new Ship("Battleship", 4, "Player 1");
-	this.aircraftCarrierP2 = new Ship("Aircraft Carrier", 5, "Player 1");
-	this.destroyerP2 = new Ship("Destroyer", 3, "Player 1");
+	this.submarineP2 = new Ship("Submarine", 3, "Player 2");
+	this.patrolBoatP2 = new Ship("Patrol Boat", 2, "Player 2");
+	this.battleshipP2 = new Ship("Battleship", 4, "Player 2");
+	this.aircraftCarrierP2 = new Ship("Aircraft Carrier", 5, "Player 2");
+	this.destroyerP2 = new Ship("Destroyer", 3, "Player 2");
 };
 
 // resets the game objects
