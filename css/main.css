@@ -5,3 +5,7 @@
   padding: 10px;
   width: 50px;
 }
+
+#ships {
+  display: inline;
+}

@@ -11,13 +11,10 @@
 //   - will change mark to 1
 //   - ship is considered sunk when the array is filled with 1's (have shipSunk variable --> boolean)
 
-
-
 //Ship properties:
 // shipLength;
 // shipType;
 // shipHit;
-
 
 // Square object (within gameboard)
 // boardPosition;
@@ -25,11 +22,7 @@
 //
 
 // Init gameboard
-
-
-
 // Placing ships on the board
-
 
 
 // Ship is placed
@@ -68,6 +61,3 @@
 //     console.log(ship);
 //     return isNotHit;
 //   }
-
-
-

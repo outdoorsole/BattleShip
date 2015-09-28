@@ -1,33 +1,35 @@
 // var gameManager = new GameManager();
 // gameManager.startGame();
 
-// $(".tile").click(function(e){
-//   var initialShipPosition = e.target.id.substring(9, 11);
-//   var num = parseInt(initialShipPosition);
-//   gameManager.setLocation(num);
-// });
+$(".gameboard-tile").click(function(e){
+  var initialShipPosition = e.target.id.substring(14, 15);
+  var num = parseInt(initialShipPosition);
+  gameManager.player1.selectAShip(num);
+});
+
 
 // rewrite this into 3 lines
 
-// $("#submarine").click(function() {
-//     gameManager.setSelectedShip(3);
-//   });
 
-// $("#patrol-boat").click(function() {
-//   gameManager.setSelectedShip(2);
-// });
+$(".Submarine").click(function() {
+    gameManager.setSelectedShip(3);
+  });
 
-// $("#destroyer").click(function() {
-//   gameManager.setSelectedShip(3);
-// });
+$(".Patrol Boat").click(function() {
+  gameManager.setSelectedShip(2);
+});
 
-// $("#battleship").click(function() {
-//   gameManager.setSelectedShip(4);
-// });
+$("#destroyer").click(function() {
+  gameManager.setSelectedShip(3);
+});
 
-// $("#aircraft-carrier").click(function() {
-//   gameManager.setSelectedShip(5);
-// });
+$("#battleship").click(function() {
+  gameManager.setSelectedShip(4);
+});
+
+$("#aircraft-carrier").click(function() {
+  gameManager.setSelectedShip(5);
+});
 
 // $(".tile").click(function(e) {
 //   gameManager.markTile(e.target.id);

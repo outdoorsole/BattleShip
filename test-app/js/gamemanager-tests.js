@@ -35,8 +35,8 @@ assert(gameManager.player1.shipHit.length === 0, "If passes then shipHit array w
 // assert(player2.missArr === [], "play two's array should be empty");
 // assert("should invoke btn")
 // assert(" ('click' should invoke game setup state")
-// var objInstance = Object.create(PublicModule);  
-// objInstance.init({  
+// var objInstance = Object.create(PublicModule);
+// objInstance.init({
 //   valueSetOnInit: "value set during initialization"
 // });
 
@@ -48,23 +48,23 @@ assert(gameManager.player1.shipHit.length === 0, "If passes then shipHit array w
 
 // describe("Button Click Event Tests", function() {
 //   var spyEvent;
-   
+
 //   beforeEach(function() {
 //     setUpHTMLFixture();
 //   });
-      
+
 //   assert("should invoke the btnShowMessage click event.", function() {
 //     spyEvent = spyOnEvent('#btnShowMessage', 'click');
 //     $('#btnShowMessage').trigger( "click" );
-       
+
 //     expect('click').toHaveBeenTriggeredOn('#btnShowMessage');
 //     expect(spyEvent).toHaveBeenTriggered();
 //   });
-      
+
 // assert("should invoke the btnHideMessage click event.", function() {
 //     spyEvent = spyOnEvent('#btnHideMessage', 'click');
 //     $('#btnHideMessage').trigger( "click" );
-       
+
 //     expect('click').toHaveBeenTriggeredOn('#btnHideMessage');
 //     expect(spyEvent).toHaveBeenTriggered();
 //   });

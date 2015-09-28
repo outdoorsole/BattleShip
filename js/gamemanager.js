@@ -1,5 +1,4 @@
-var GameManager = function() {
-
+function GameManager() {
 	this.player1;
 	this.player2;
 	this.submarineP1;
@@ -12,13 +11,12 @@ var GameManager = function() {
 	this.destroyerP2;
 	this.battleshipP2;
 	this.aircraftCarrierP2;
-	
-  
-  this.init = function() {
-  	
-  	this.player1 = new Player("Player1");
-	this.player2 = new Player("Player2");
+}
 
+// initializes the instance of the game
+GameManager.prototype.init = function() {
+  this.player1 = new Player("Player1");
+	this.player2 = new Player("Player2");
 
 	this.submarineP1 = new Ship("Submarine", 3, "Player 1");
 	this.patrolBoatP1 = new Ship("Patrol Boat", 2, "Player 1");
@@ -31,20 +29,16 @@ var GameManager = function() {
 	this.battleshipP2 = new Ship("Battleship", 4, "Player 1");
 	this.aircraftCarrierP2 = new Ship("Aircraft Carrier", 5, "Player 1");
 	this.destroyerP2 = new Ship("Destroyer", 3, "Player 1");
+};
 
-		return this;
-   }
-  this.resetInit = function() {
-	this.player1.shipHit.length = 0;
-	this.player1.shipMiss.length = 0;
-	this.player2.shipHit.length = 0;
-	this.player2.shipMiss.length = 0;
-}
+// resets the game objects
+GameManager.prototype.reset = function() {
+	this.player1.reset();
+	this.player2.reset();
 };
 
 var gameManager = new GameManager();
 gameManager.init();
-
 
 
 // init method : it's going to initialize the game - launches
@@ -77,50 +71,6 @@ gameManager.init();
 //inclusion of score) > end turn > switch turn > restart in game manager
 
 //communicate end game (victory for p1 or p2)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // var GameManager = function() {
