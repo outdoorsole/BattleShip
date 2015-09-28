@@ -3,36 +3,78 @@ function Player(name,shipHit,shipMiss) {
   this.shipHit =  shipHit || [];
   this.shipMiss = shipMiss || [];
 
-  this.ships = [];
-  this.ships.push(new Ship("Submarine", 3));
-  this.ships.push(new Ship("Patrol Boat", 2));
-  this.ships.push(new Ship("Battleship", 4));
-  this.ships.push(new Ship("Aircraft Carrier", 5));
-  this.ships.push(new Ship("Destroyer", 3));
-}
+  var ships = [];
+  ships.push(new Ship("Submarine", 3));
+  ships.push(new Ship("Patrol Boat", 2));
+  ships.push(new Ship("Battleship", 4));
+  ships.push(new Ship("Aircraft Carrier", 5));
+  ships.push(new Ship("Destroyer", 3));
 
-Player.prototype.getPlayerProp = function () {
-	return this;
-};
+  this.getSubmarine = function () {
+    return ships[0];
+  };
 
-Player.prototype.recordShipHit = function (target) {
-	this.shipHit.push(target);
-	return this.shipHit;
-};
+  this.getPlayerProp = function () {
+    return this;
+  };
 
-Player.prototype.recordShipMiss = function (target) {
-	this.shipMiss.push(target);
-	return this.shipMiss;
-};
+  this.recordShipHit = function (target) {
+    this.shipHit.push(target);
+    return this.shipHit;
+  };
 
-Player.prototype.getShipByType = function (shipType) {
-  for (var i = 0; i < this.ships.length; i++) {
-    if (this.ships[i].shipType === shipType) {
-      return this.ships[i];
+  this.recordShipMiss = function (target) {
+    this.shipMiss.push(target);
+    return this.shipMiss;
+  };
+
+  this.getShipByType = function (shipType) {
+    for (var i = 0; i < ships.length; i++) {
+      if (ships[i].shipType === shipType) {
+        return ships[i];
+      }
     }
+  };
+  this.setShip = function () {
+
   }
-  return;
 }
+
+// Player.prototype.getPlayerProp = function () {
+// 	return this;
+// };
+
+// Player.prototype.recordShipHit = function (target) {
+// 	this.shipHit.push(target);
+// 	return this.shipHit;
+// };
+
+// Player.prototype.recordShipMiss = function (target) {
+// 	this.shipMiss.push(target);
+// 	return this.shipMiss;
+// };
+
+// Player.prototype.getShipByType = function (shipType) {
+//   for (var i = 0; i < this.ships.length; i++) {
+//     if (this.ships[i].shipType === shipType) {
+//       return this.ships[i];
+//     }
+//   }
+//   return;
+// }
+
+
+
+
+
+// Player.prototype.getSubmarine = function() {
+//   console.log(ships[0]);
+//   return ships[0];
+// }
+
+
+
+
 
 
 

@@ -1,6 +1,16 @@
 function GameManager() {
 	this.player1;
 	this.player2;
+
+  var selectedShip = "";
+
+  this.getSelectedShip = function(){
+    return selectedShip;
+  }
+
+  this.setSelectedShip = function(ship){
+    selectedShip = ship;
+  }
 }
 
 // initializes the instance of the game
@@ -15,8 +25,7 @@ GameManager.prototype.reset = function() {
 	this.player2.reset();
 };
 
-var gameManager = new GameManager();
-gameManager.init();
+
 
 
 
@@ -120,6 +129,8 @@ gameManager.init();
 //   }
 
 //   var getPositions = function() {
+
 //     $(".tile").click(markTile);
+
 //   }
 // }

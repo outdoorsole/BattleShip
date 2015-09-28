@@ -1,7 +1,14 @@
 function Ship (shipType, shipSize, locationArray) {
   this.shipType = shipType;
   this.shipSize = shipSize || 0;
-  this.getLocation = ["No current location."];
+  this.shipLocation = ["No current location."];
+
+  this.setShipLocation = function (id) {
+    this.shipLocation.length = 0;
+    for (var i = 0; i < this.shipSize; i++) {
+      this.shipLocation.push(id + i);
+    }
+  }
 }
 
 Ship.prototype.getShipProperties = function() {
@@ -22,13 +29,18 @@ Ship.prototype.displayShipOnBoard = function() {
 
   // gameManager.player1.getShipByType("Submarine").placeShipOnBoard();
 
-  $(".gameboard-tile").on('click', function(e) {
-    console.log(e);
-    console.log("A tile has been clicked");
-    var initialShipPosition = e.target.id.substring(14, 16);
-    console.log(initialShipPosition);
-    return initialShipPosition;
-  });
+
+  // $(".gameboard-tile").on('click', function(e) {
+  //   console.log(e);
+  //   console.log("A tile has been clicked");
+  //   var initialShipPosition = e.target.id.substring(14, 16);
+  //   console.log(initialShipPosition);
+
+    // console.log(this.shipLocation);
+
+    // this.shipLocation.push(initialShipPosition);
+    // return initialShipPosition;
+  // });
 
 // $(".gameboard-tile").click(function(e){
 //   var initialShipPosition = e.target.id.substring(14, 15);
@@ -37,12 +49,12 @@ Ship.prototype.displayShipOnBoard = function() {
 // });
 };
 
-Ship.prototype.placeShipOnBoard = function(num) {
-  this.shipLocation = [];
-  for (var i = 0; i < this.shipSize; i++) {
-    this.shipLocation.push(num + i);
-  }
-};
+// Ship.prototype.placeShipOnBoard = function(num) {
+//   this.shipLocation = [];
+//   for (var i = 0; i < this.shipSize; i++) {
+//     this.shipLocation.push(num + i);
+//   }
+// };
 
 Ship.prototype.shipHit = function(targetPosition) {
   var checkNum = this.shipLocation.indexOf(targetPosition);
