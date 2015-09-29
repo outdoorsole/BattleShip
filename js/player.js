@@ -43,6 +43,10 @@ function Player(name,shipHit,shipMiss) {
       }
     }
   };
+
+  this.finishTurn = function () {
+
+  }
   // this.setShip = function (shipLocation) {
   //   // Ships[shipName].location = shipLocation
 

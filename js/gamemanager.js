@@ -1,8 +1,13 @@
 function GameManager() {
-	this.player1;
-	this.player2;
+  var players = [];
 
   var selectedShip = "";
+  var selectedPlayer = 0;
+
+  this.init = function() {
+    players.push(new Player("Player1"), new Player("Player2"));
+    console.log(players);
+  }
 
   this.getSelectedShip = function(){
     console.log(selectedShip);
@@ -12,13 +17,21 @@ function GameManager() {
   this.setSelectedShip = function(ship){
     selectedShip = ship;
   }
+
+  this.getSelectedPlayer = function() {
+    return players[selectedPlayer];
+  }
+
+  this.setSelectedPlayer = function(playerId) {
+    selectedPlayer = playerId;
+  }
 }
 
+
 // initializes the instance of the game
-GameManager.prototype.init = function() {
-  this.player1 = new Player("Player1");
-  this.player2 = new Player("Player2");
-};
+// GameManager.prototype.init = function() {
+//   players.push(new Player("Player1"), new Player("Player2"));
+// };
 
 // resets the game objects
 GameManager.prototype.reset = function() {

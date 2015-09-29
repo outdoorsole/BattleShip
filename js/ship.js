@@ -2,13 +2,20 @@ function Ship (shipType, shipSize, locationArray) {
   this.shipType = shipType;
   this.shipSize = shipSize || 0;
   this.shipLocation = ["No current location."];
+  //var $parent = $(this);
+
 
   this.setShipLocation = function (id) {
     this.shipLocation.length = 0;
+    console.log("before the for loop" + this.shipLocation);
     for (var i = 0; i < this.shipSize; i++) {
       this.shipLocation.push(id + i);
+      console.log(this.shipLocation);
+      console.log(id+i);
       $("#board-position" + (id + i)).css("background-color", "red");
     }
+      console.log(this.shipLocation);
+    return this;
   }
 }
 
