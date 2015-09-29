@@ -1,51 +1,51 @@
-var GameManager = function() {
+function GameManager() {
+  var players = [];
 
-	this.player1;
-	this.player2;
-	this.submarineP1;
-	this.patrolBoatP1;
-	this.destroyerP1;
-	this.battleshipP1;
-	this.aircraftCarrierP1;
-	this.submarineP2;
-	this.patrolBoatP2;
-	this.destroyerP2;
-	this.battleshipP2;
-	this.aircraftCarrierP2;
-	
-  
+  var selectedShip = "";
+  var selectedPlayer = 0;
+
   this.init = function() {
-  	
-  	this.player1 = new Player("Player1");
-	this.player2 = new Player("Player2");
+    players.push(new Player("Player1"), new Player("Player2"));
+  }
 
+  this.getSelectedShip = function(){
+    return selectedShip;
+  }
 
-	this.submarineP1 = new Ship("Submarine", 3, "Player 1");
-	this.patrolBoatP1 = new Ship("Patrol Boat", 2, "Player 1");
-	this.battleshipP1 = new Ship("Battleship", 4, "Player 1");
-	this.aircraftCarrierP1 = new Ship("Aircraft Carrier", 5, "Player 1");
-	this.destroyerP1 = new Ship("Destroyer", 3, "Player 1");
+  this.setSelectedShip = function(ship){
+    selectedShip = ship;
+  }
 
-	this.submarineP2 = new Ship("Submarine", 3, "Player 1");
-	this.patrolBoatP2 = new Ship("Patrol Boat", 2, "Player 1");
-	this.battleshipP2 = new Ship("Battleship", 4, "Player 1");
-	this.aircraftCarrierP2 = new Ship("Aircraft Carrier", 5, "Player 1");
-	this.destroyerP2 = new Ship("Destroyer", 3, "Player 1");
+  this.getSelectedPlayer = function() {
+    return players[selectedPlayer];
+  }
 
-		return this;
-   }
-  this.resetInit = function() {
-	this.player1.shipHit.length = 0;
-	this.player1.shipMiss.length = 0;
-	this.player2.shipHit.length = 0;
-	this.player2.shipMiss.length = 0;
+  this.setSelectedPlayer = function(playerId) {
+    selectedPlayer = playerId;
+  }
 }
-};
-
-var gameManager = new GameManager();
-gameManager.init();
 
 
+// initializes the instance of the game
+// GameManager.prototype.init = function() {
+//   players.push(new Player("Player1"), new Player("Player2"));
+// };
+
+// resets the game objects
+// GameManager.prototype.reset = function() {
+// 	this.player1.reset();
+// 	this.player2.reset();
+// };
+
+
+
+
+
+
+
+// (function(){
+
+// })();
 
 // init method : it's going to initialize the game - launches
 //gameboard : makes ships available for selection : displays
@@ -77,50 +77,6 @@ gameManager.init();
 //inclusion of score) > end turn > switch turn > restart in game manager
 
 //communicate end game (victory for p1 or p2)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // var GameManager = function() {
@@ -185,6 +141,8 @@ gameManager.init();
 //   }
 
 //   var getPositions = function() {
+
 //     $(".tile").click(markTile);
+
 //   }
 // }

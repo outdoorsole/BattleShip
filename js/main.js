@@ -1,34 +1,91 @@
-// var gameManager = new GameManager();
-// gameManager.startGame();
+var gameManager = new GameManager();
+gameManager.init();
 
-// $(".tile").click(function(e){
-//   var initialShipPosition = e.target.id.substring(9, 11);
+//user will click a player before selecting ships, passing index # instead of string
+$(".player1").click(function() {
+    gameManager.setSelectedPlayer(0);
+});
+
+$(".player2").click(function() {
+    gameManager.setSelectedPlayer(1);
+});
+
+// User will click on a ship on the board
+$(".submarine").click(function() {
+    gameManager.setSelectedShip("Submarine");
+  });
+
+$(".patrol-boat").click(function() {
+    gameManager.setSelectedShip("Patrol Boat");
+});
+
+$(".destroyer").click(function() {
+    gameManager.setSelectedShip("Destroyer");
+});
+
+$(".battleship").click(function() {
+    gameManager.setSelectedShip("Battleship");
+});
+
+$(".aircraft-carrier").click(function() {
+    gameManager.setSelectedShip("Aircraft Carrier");
+});
+
+// User will click on a tile where they want their ship placed
+$(".gameboard-tile").on('click', function(e) {
+    var initialShipPosition = e.target.id.substring(14, 16);
+    var numInitialShipPosition = parseInt(initialShipPosition);
+
+    var ship = gameManager.getSelectedPlayer().getShipByType(gameManager.getSelectedShip()).setShipLocation(numInitialShipPosition);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $(".gameboard-tile").click(function(e){
+//   var initialShipPosition = e.target.id.substring(14, 15);
 //   var num = parseInt(initialShipPosition);
-//   gameManager.setLocation(num);
+//   gameManager.player1.selectAShip(num);
 // });
+
 
 // rewrite this into 3 lines
 
-// $("#submarine").click(function() {
-//     gameManager.setSelectedShip(3);
-//   });
-
-// $("#patrol-boat").click(function() {
-//   gameManager.setSelectedShip(2);
-// });
-
-// $("#destroyer").click(function() {
-//   gameManager.setSelectedShip(3);
-// });
-
-// $("#battleship").click(function() {
-//   gameManager.setSelectedShip(4);
-// });
-
-// $("#aircraft-carrier").click(function() {
-//   gameManager.setSelectedShip(5);
-// });
 
 // $(".tile").click(function(e) {
-//   gameManager.markTile(e.target.id);
+//   gameManager.markTile();
 // })
