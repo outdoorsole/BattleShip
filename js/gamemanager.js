@@ -6,11 +6,9 @@ function GameManager() {
 
   this.init = function() {
     players.push(new Player("Player1"), new Player("Player2"));
-    console.log(players);
   }
 
   this.getSelectedShip = function(){
-    console.log(selectedShip);
     return selectedShip;
   }
 
@@ -34,10 +32,10 @@ function GameManager() {
 // };
 
 // resets the game objects
-GameManager.prototype.reset = function() {
-	this.player1.reset();
-	this.player2.reset();
-};
+// GameManager.prototype.reset = function() {
+// 	this.player1.reset();
+// 	this.player2.reset();
+// };
 
 
 

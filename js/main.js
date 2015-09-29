@@ -33,18 +33,10 @@ $(".aircraft-carrier").click(function() {
 
 // User will click on a tile where they want their ship placed
 $(".gameboard-tile").on('click', function(e) {
-    console.log("A tile has been clicked");
     var initialShipPosition = e.target.id.substring(14, 16);
     var numInitialShipPosition = parseInt(initialShipPosition);
 
     var ship = gameManager.getSelectedPlayer().getShipByType(gameManager.getSelectedShip()).setShipLocation(numInitialShipPosition);
-
-    console.log(ship);
-    console.log(gameManager.getSelectedPlayer().getShipByType(gameManager.getSelectedShip()));
-
-    // console.log(gameManager.getSelectedPlayer().getShipByType("Submarine").setShipLocation(6));
-    console.log(typeof gameManager.getSelectedShip());
-    console.log(numInitialShipPosition);
 });
 
 
